@@ -1,0 +1,6 @@
+{
+  "name": "People & Culture Workflow Starter",
+  "description": "Starter template for P&C automations with BambooHR and Employment Hero secrets pre-wired.",
+  "iconName": "octicon people",
+  "categories": ["HR", "Automation"]
+}

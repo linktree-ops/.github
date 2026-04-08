@@ -1,0 +1,6 @@
+{
+  "name": "IT Workflow Starter",
+  "description": "Starter template for IT automations with Okta, Kandji, Kisi, and Lumos secrets pre-wired.",
+  "iconName": "octicon computer",
+  "categories": ["IT", "Automation"]
+}

@@ -1,0 +1,34 @@
+name: IT Workflow Starter
+
+on:
+  workflow_dispatch:
+    inputs:
+      employee_email:
+        description: "Employee email address"
+        required: true
+        type: string
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run script
+        env:
+          OKTA_API_KEY: ${{ secrets.OKTA_API_KEY }}
+          OKTA_DOMAIN: ${{ secrets.OKTA_DOMAIN }}
+          KANDJI_API_KEY: ${{ secrets.KANDJI_API_KEY }}
+          KANDJI_URL: ${{ secrets.KANDJI_URL }}
+          KISI_API_KEY: ${{ secrets.KISI_API_KEY }}
+          LUMOS_API_KEY: ${{ secrets.LUMOS_API_KEY }}
+          EMPLOYEE_EMAIL: ${{ inputs.employee_email }}
+        run: python scripts/your_script.py

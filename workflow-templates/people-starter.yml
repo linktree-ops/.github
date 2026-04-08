@@ -1,0 +1,32 @@
+name: People & Culture Workflow Starter
+
+on:
+  workflow_dispatch:
+    inputs:
+      employee_email:
+        description: "Employee email address"
+        required: true
+        type: string
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run script
+        env:
+          BAMBOOHR_API_KEY: ${{ secrets.BAMBOOHR_API_KEY }}
+          EMPLOYMENT_HERO_URL: ${{ secrets.EMPLOYMENT_HERO_URL }}
+          EMPLOYMENT_HERO_API_KEY: ${{ secrets.EMPLOYMENT_HERO_API_KEY }}
+          EMPLOYMENT_HERO_BUSINESS_ID: ${{ secrets.EMPLOYMENT_HERO_BUSINESS_ID }}
+          EMPLOYEE_EMAIL: ${{ inputs.employee_email }}
+        run: python scripts/your_script.py
