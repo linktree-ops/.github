@@ -6,9 +6,9 @@ This organisation contains automation workflows for the **IT** and **People & Cu
 
 | Repo | Team | Purpose |
 |---|---|---|
-| [it-automations](../it-automations) | IT | Okta, Kandji, Kisi, Lumos workflows |
-| [people-automations](../people-automations) | People & Culture | BambooHR, Employment Hero workflows |
-| [ops-shared](../ops-shared) | All | Shared reusable workflows and scripts |
+| [it-automations](https://github.com/linktree-ops/it-automations) | IT | Okta, Kandji, Kisi, Lumos workflows |
+| [people-automations](https://github.com/linktree-ops/people-automations) | People & Culture | BambooHR, Employment Hero workflows |
+| [ops-shared](https://github.com/linktree-ops/ops-shared) | All | Shared reusable workflows and scripts |
 
 ## Running a workflow
 
